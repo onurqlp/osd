@@ -45,3 +45,16 @@ html,body{max-width:100%;overflow-x:clip}
 header{max-width:100vw;box-sizing:border-box}
 header .brand img{display:block;max-width:100%;height:auto;object-fit:contain}
 @media(max-width:760px){header nav{max-width:100%;overflow-x:auto;scrollbar-width:none}header nav::-webkit-scrollbar{display:none}}
+/* GO 1: embedded lesson videos and portrait Shorts */
+.lesson-video{margin:22px 0;padding:20px;border:1px solid #dbe3ea;border-radius:14px;background:#fff}
+.lesson-video-copy h3,.lesson-video-copy h4{margin:0 0 6px;color:var(--navy)}
+.lesson-video-copy p{margin:0 0 12px;color:var(--muted);font-size:14px}
+.lesson-video .video-box{margin-top:12px}
+.lesson-video .video-box--landscape{aspect-ratio:16/9;width:100%}
+.lesson-video .video-box--portrait{aspect-ratio:9/16;width:min(100%,340px);margin:14px auto 0}
+.lesson-video .video-play{max-width:calc(100% - 24px);padding:14px 20px;border:0;border-radius:9px;background:var(--gold);color:var(--navy);font-weight:750;cursor:pointer}
+.lesson-video .video-play:hover{background:#f0d29b}
+.lesson-video .video-meta{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:10px 0 0}
+.lesson-video .video-meta a{font-weight:650}
+.lesson-video .video-box iframe{display:block}
+@media(max-width:760px){.lesson-video{padding:16px}.lesson-video .video-box--portrait{width:min(100%,290px)}.lesson-video .video-meta{align-items:flex-start;flex-direction:column;gap:4px}}
