@@ -48,6 +48,7 @@
       const article = document.getElementById(task.id);
       if (!article) continue;
       const paper = article.querySelector(':scope > .official-evidence');
+      const lessonVideo = article.querySelector(':scope > .lesson-video');
       const introTitle = article.querySelector(':scope > h4');
       const introText = introTitle && introTitle.nextElementSibling;
       const nav = article.querySelector(':scope > .task-bottom');
@@ -73,6 +74,7 @@
       });
       quick.append(ol);
       learnColumn.append(quick);
+      if (lessonVideo) learnColumn.append(lessonVideo);
 
       const detail = make('details','study-detail');
       const disclosure = make('summary','study-detail-summary','Örnekleri ve ayrıntılı sınav stratejilerini göster');
@@ -83,7 +85,7 @@
       // After paper was moved, collect current article nodes between intro and nav.
       const children = [...article.children];
       const from = children.indexOf(nav);
-      const reserved = new Set([article.querySelector('.task-top'),article.querySelector('.title'),counter,nav,workspace]);
+      const reserved = new Set([article.querySelector('.task-top'),article.querySelector('.title'),counter,nav,workspace,lessonVideo]);
       for (const element of children) {
         if (element === nav) break;
         if (reserved.has(element) || element === introTitle || element === introText || element === paper) continue;

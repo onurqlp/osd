@@ -72,7 +72,7 @@ document.addEventListener('click',e=>{
    frame.title=play.dataset.youtubeTitle||'YouTube video player';
    frame.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
    frame.allowFullscreen=true;frame.referrerPolicy='strict-origin-when-cross-origin';
-   box.replaceChildren(frame);
+   box.classList.add('is-playing');box.replaceChildren(frame);
   }
  }
  const c=e.target.closest('.copy');if(c)copy(c.parentElement.querySelector('[lang=de]').innerText);

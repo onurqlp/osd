@@ -58,3 +58,8 @@ header .brand img{display:block;max-width:100%;height:auto;object-fit:contain}
 .lesson-video .video-meta a{font-weight:650}
 .lesson-video .video-box iframe{display:block}
 @media(max-width:760px){.lesson-video{padding:16px}.lesson-video .video-box--portrait{width:min(100%,290px)}.lesson-video .video-meta{align-items:flex-start;flex-direction:column;gap:4px}}
+/* Keep task Shorts visible before the expandable examples; expand to portrait after play. */
+.lesson-video .video-box--portrait:not(.is-playing){aspect-ratio:auto;width:100%;max-width:340px;min-height:0;margin:12px 0 0;display:block;background:transparent;border-radius:0;overflow:visible}
+.lesson-video .video-box--portrait:not(.is-playing) .video-play{display:block;width:100%;max-width:100%;min-height:48px}
+.lesson-video .video-box--portrait.is-playing{aspect-ratio:9/16;width:min(100%,340px);min-height:0;margin:12px 0 0;display:grid;background:var(--navy);border-radius:10px;overflow:hidden}
+@media(max-width:760px){.lesson-video .video-box--portrait:not(.is-playing){width:100%}.lesson-video .video-box--portrait.is-playing{width:min(100%,290px)}}
